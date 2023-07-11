@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Aceleracion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+            }
+        </style>
+        <h1>Integrantes de la Aceleración</h1>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>  
+                <th>Git</th>
+                <th>Java</th>
+                <th>Docker</th>
+                <th>Base de datos</th>
+                <th>Botones</th>
+            </tr>
+            <tr th:each="lista : ${lista}">
+                <td th:text="${lista.nombre}"></td>
+                <td th:text="${lista.apellido}"></td>
+                <td th:text="${lista.git}"></td>
+                <td th:text="${lista.java}"></td>
+                <td th:text="${lista.docker}"></td>
+                <td th:text="${lista.baseDatos}"></td>
+                <td>
+                    <a href="#">Modificar</a>
+                    <a href="#">Borrar</a>
+                </td>
+            </tr>
+        </table>
+        <a href="#">Agregar Integrante</a>
+    </body>
+</html>
