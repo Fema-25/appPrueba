@@ -35,7 +35,7 @@ public class ServicioIntegrante {
             existente.setApellido(actualizado.getApellido());
             existente.setNombre(actualizado.getNombre());
             existente.setJava(actualizado.getJava());
-            existente.setBaseDatos(actualizado.getGit());
+            existente.setBaseDatos(actualizado.getBaseDatos()));
             existente.setGit(actualizado.getGit());
             existente.setDocker(actualizado.getDocker());
             repoIntegrante.save(existente);
