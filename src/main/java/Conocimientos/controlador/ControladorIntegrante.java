@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -52,5 +53,19 @@ public class ControladorIntegrante {
        servIntegrante.ModificarIntegrante(id, integrante);        
        return "redirect:/app/lista";
       
+    }
+    @PutMapping("/actulizarDatos/{id}")
+    public String actualizarDatos(@PathVariable("id") Integer id,
+                                  @RequestParam(value = "nombre", required = false) String nombre,
+                                  @RequestParam(value = "apellido", required = false) String apellido,
+                                  @RequestParam(value = "java", required = false) Integer java,
+                                  @RequestParam(value = "git", required = false) Integer git,
+                                  @RequestParam(value = "docker", required = false)Integer docker,
+                                  @RequestParam(value = "baseDatos", required = false)Integer baseDatos){
+        
+        
+        servIntegrante.modificarDatos(id, nombre, apellido, java, git, docker, baseDatos);
+        
+        return "redirect:/app/lista";
     }
 }
